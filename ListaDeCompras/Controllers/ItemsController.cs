@@ -18,7 +18,7 @@ namespace ListaDeCompras.Controllers
     public class ItemsController : Controller
     {
 
-        private ApplicationDbContext db = new ApplicationDbContext();
+        private readonly ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Items
         [AllowAnonymous]

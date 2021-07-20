@@ -26,9 +26,10 @@
 }
 
 .imgList {
-    width: 200px;
-    height: auto;
+    max-width: 200px;
+    height: 200px;
 }
+
 
 .imgDetail {
     width: 500px;
