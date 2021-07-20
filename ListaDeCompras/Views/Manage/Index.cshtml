@@ -1,0 +1,25 @@
+﻿@model ListaDeCompras.Models.IndexViewModel
+@{
+    ViewBag.Title = "Gerenciar";
+}
+
+<h2>@ViewBag.Title.</h2>
+
+<p class="text-success">@ViewBag.StatusMessage</p>
+<div class="container-section">
+    <h4>Alterar as configurações de conta</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>Senha:</dt>
+            [
+            @if (Model.HasPassword)
+            {
+                @Html.ActionLink("Alterar sua senha", "ChangePassword")
+            }
+            else
+            {
+                @Html.ActionLink("Criar", "SetPassword")
+            }
+            ]
+    </dl>
+</div>

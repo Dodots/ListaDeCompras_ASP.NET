@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "upload";
+}
+
+
+<div class="container">
+    <h2>upload</h2>
+    <h3>@Html.Encode(ViewData["Message"])</h3>
+    @using (Html.BeginForm("FileUpload", "FileUpload", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <fieldset>
+            <input type="file" multiple="multiple" class="multi" />
+            <input type="submit" value="Enviar" />
+        </fieldset>
+    }
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

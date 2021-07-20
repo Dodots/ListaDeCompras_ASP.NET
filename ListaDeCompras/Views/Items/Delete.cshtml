@@ -1,0 +1,83 @@
+﻿@model ListaDeCompras.Models.Item
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<div class="container-section">
+
+    <h3>Deseja deletar esse item?</h3>
+    <div>
+
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Nome)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Nome)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Descricao)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Descricao)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Preco)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Preco)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Categoria)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Categoria)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.DataDeCompra)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.DataDeCompra)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Imagem)
+            </dt>
+
+            <dd>
+                @{
+                    if (Model.ImagemDB != null)
+                    {
+
+                        var base64 = Convert.ToBase64String(Model.ImagemDB);
+                        var imgSrc = String.Format("data:image/gif;base64,{0}", base64);
+
+                        <img src="@imgSrc" class="imgDetail" />
+                    }
+
+                }
+            </dd>
+
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                <div class="ms-5 mb-5">
+                    <input type="submit" value="Delete" class="btn-lg btn-dark" /> 
+                </div>
+            }
+        </dl>
+
+        @Html.ActionLink("Voltar", "Index")
+    </div>
+</div>
